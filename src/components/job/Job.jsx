@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types'
+import { NavLink } from 'react-router-dom';
 
 const Job = ({job}) => {
     console.log(job)
-    const {logo, job_title, company_name, remote_or_onsite, job_type, location, salary} = job
+    const {id, logo, job_title, company_name, remote_or_onsite, job_type, location, salary} = job
     return (
         <div>
             <div className='mt-3 border border-gray-300 rounded-lg'>
@@ -26,7 +27,7 @@ const Job = ({job}) => {
         </div>
     </div>
     <div className="card-actions ">
-      <button className="btn bg-gradient-to-r from-blue-400 to-indigo-500">View Details</button>
+      <NavLink to={`/job/${id}`}><button className="btn bg-gradient-to-r from-blue-400 to-indigo-500">View Details</button></NavLink>
     </div>
   </div>
 </div>

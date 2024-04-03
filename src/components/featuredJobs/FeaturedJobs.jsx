@@ -3,14 +3,14 @@ import Job from "../job/Job";
 
 const FeaturedJobs = () => {
     const [jobs, setJobs] = useState([])
-    const [dataLength, setDataLength] =useState(4)
+    const [dataLength, setDataLength] = useState(4)
 
     useEffect(() => {
         fetch('/jobs.json')
-        .then(res => res.json())
-        .then(data => setJobs(data))
-    },[])
-    
+            .then(res => res.json())
+            .then(data => setJobs(data))
+    }, [])
+
     return (
         <div>
             <div className="text-center">

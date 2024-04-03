@@ -1,6 +1,7 @@
 import { NavLink, useLoaderData, useParams } from "react-router-dom";
 import { saveJobApplication } from "../../utility/localstorage";
 import { toast } from 'react-toastify';
+import { Helmet } from "react-helmet-async";
 
 const Jobdetails = () => {
     const jobs = useLoaderData()
@@ -15,6 +16,9 @@ const Jobdetails = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>Career hub job details</title>
+            </Helmet>
             <div className="grid grid-cols-4 gap-6 my-16">
                 <div className="col-span-3  min-h-10 border space-y-6">
                     <p><span>Job Descrption: {job_description}</span></p>
